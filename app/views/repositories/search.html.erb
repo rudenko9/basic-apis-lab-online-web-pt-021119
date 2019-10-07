@@ -9,8 +9,10 @@
 <ul>
   <% if @repos %>
   <% @repos.each do |repo| %>
-  <li> 
-  
+  <li>
+    <%= repo['name'] %> - <%= link_to repo['html_url'], repo['html_url'] %><br>
+    <%= repo['description'] %>
   </li>
+  <% end %>
 </ul>
 </div>
