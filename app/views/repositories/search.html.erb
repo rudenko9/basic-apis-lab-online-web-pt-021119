@@ -14,5 +14,8 @@
     <%= repo['description'] %>
   </li>
   <% end %>
+  <% elsif @error %>
+  <p><%= @error %></p>
+  <% end %>
 </ul>
 </div>
