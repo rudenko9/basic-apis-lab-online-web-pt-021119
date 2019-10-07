@@ -10,6 +10,13 @@ class RepositoriesController < ApplicationController
         req.params['q'] = params[:query]
       end
       
+    body = JSON.parse(resp.body)
+    if resp.success?
+      @repos = body['items']
+    else 
+      @erros = body['errors'][0]['code']
+    end 
+    rescue 
     
   end
 end
