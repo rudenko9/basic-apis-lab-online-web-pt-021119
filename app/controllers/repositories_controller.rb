@@ -16,7 +16,9 @@ class RepositoriesController < ApplicationController
     else 
       @erros = body['errors'][0]['code']
     end 
-    rescue 
-    
+    rescue Faraday::ConnectionFailed
+      @error = "Timeout"
+    end
+    render 'search'
   end
 end
